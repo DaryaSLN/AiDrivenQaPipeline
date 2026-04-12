@@ -1,0 +1,17 @@
+# Test Scenarios for American Eagle Account Creation
+
+## Minimal Essential Scenarios
+
+- Create an account with all valid required fields
+- Attempt to create an account with an empty first name
+- Attempt to create an account with an empty last name
+- Attempt to create an account with an invalid email format
+- Attempt to create an account with an already registered email
+- Attempt to create an account with an empty password
+- Attempt to create an account with a password that is too short
+- Attempt to create an account where the 'password' and 'confirm password' fields do not match
+
+E-mail: john.doe@example.com
+Phone number: +158357465854
+Password: Password123!
+

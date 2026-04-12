@@ -1,0 +1,45 @@
+You are a Senior QA Engineer.
+
+Based on the following artifacts:
+- original checklist
+- generated test cases
+- generated autotests
+- AI code review
+
+Detect potential defects, inconsistencies, missing validations, risks or defects of documentation.
+
+If no issues are found, return:
+
+{ "status": "NO_BUGS_FOUND" }
+
+If issues are found, return STRICT JSON:
+
+{
+  "title": "",
+  "severity": "",
+  "priority": "",
+  "environment": "AmericanEagle web",
+  "preconditions": "",
+  "steps_to_reproduce": [],
+  "actual_result": "",
+  "expected_result": "",
+  "probable_root_cause": "",
+  "evidence": ""
+}
+
+Rules:
+- return ONLY valid JSON
+- no markdown
+- no explanations
+
+CHECKLIST:
+{{CHECKLIST}}
+
+TESTCASES:
+{{TESTCASES}}
+
+CODE REVIEW:
+{{REVIEW}}
+
+AUTOTESTS:
+{{TESTS}}
