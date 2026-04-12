@@ -5,6 +5,9 @@ public class FilesUtil {
 
     public static String read(String path) {
         try {
+            if (Files.notExists(Path.of(path))) {
+                return ""; // Return empty string if file doesn't exist
+            }
             return Files.readString(Path.of(path));
         } catch (Exception e) {
             throw new RuntimeException("Cannot read file: " + path, e);
