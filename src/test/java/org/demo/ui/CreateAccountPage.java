@@ -15,25 +15,25 @@ public class CreateAccountPage {
     }
 
     public void open() {
-        logger.info("Opening Account Creation page: https://www.ae.com/us/en/account/create-account");
-        driver.get("https://www.ae.com/us/en/account/create-account");
+        logger.info("Opening Account Creation page: https://www.ae.com/us/en/myaccount/create-account");
+        driver.get("https://www.ae.com/us/en/myaccount/create-account");
     }
 
     public void createAccount(String firstName, String lastName, String email, String password, String confirmPassword) {
         logger.info("Attempting to create an account with email: {}", email);
         logger.debug("First Name: {}, Last Name: {}, Password: {}", firstName, lastName, password);
 
-        driver.findElement(By.id("firstNameInput")).sendKeys(firstName);
+        driver.findElement(By.id("ember43-input")).sendKeys(firstName);
         logger.debug("Entered first name.");
-        driver.findElement(By.id("lastNameInput")).sendKeys(lastName);
+        driver.findElement(By.id("ember44-input")).sendKeys(lastName);
         logger.debug("Entered last name.");
-        driver.findElement(By.id("emailInput")).sendKeys(email);
+        driver.findElement(By.id("ember42-input")).sendKeys(email);
         logger.debug("Entered email.");
-        driver.findElement(By.id("passwordInput")).sendKeys(password);
+        driver.findElement(By.id("ember46-input")).sendKeys(password);
         logger.debug("Entered password.");
-        driver.findElement(By.id("confirmPasswordInput")).sendKeys(confirmPassword);
+        driver.findElement(By.id("ember47-input")).sendKeys(confirmPassword);
         logger.debug("Entered confirm password.");
-        driver.findElement(By.id("createAccountButton")).click();
+        driver.findElement(By.cssSelector("button[data-test-btn='submit']")).click();
         logger.info("Clicked 'Create Account' button.");
     }
 
