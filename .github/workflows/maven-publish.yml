@@ -35,6 +35,12 @@ jobs:
         run: |
           mkdir -p generated
           mvn exec:java
+
+      - name: Run AI Log Analysis
+        env:
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: mvn exec:java -P log-analysis
+
       - name: Run generated tests
         run: mvn test || true
 

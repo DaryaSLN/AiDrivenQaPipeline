@@ -111,22 +111,6 @@ public class PipelineMain {
 
         logger.info("Bug report saved: generated/bug_report.json");
 
-        // STAGE 8. AI LOG ANALYSIS
-        logger.info("STAGE 8: Analyzing logs and generating QA summary...");
-        String logs = FilesUtil.read("generated/pipeline.log");
-        String summaryPrompt = FilesUtil.read("prompts/05_qa_summary.txt")
-                .replace("{{LOGS}}", logs);
-
-        FilesUtil.write("generated/qa_summary_prompt.txt", summaryPrompt);
-
-        String rawSummary = MistralClient.call(summaryPrompt);
-        FilesUtil.write("generated/qa_summary_raw.json", rawSummary);
-
-        String summary = extractAssistantContent(rawSummary);
-        FilesUtil.write("generated/qa_summary.txt", summary);
-
-        logger.info("QA summary saved: generated/qa_summary.txt");
-
         logger.info("=== AI QA PIPELINE FINISHED ===");
     }
 

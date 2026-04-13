@@ -147,4 +147,22 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>log-analysis</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.3.0</version>
+                        <configuration>
+                            <mainClass>LogAnalysisMain</mainClass>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
